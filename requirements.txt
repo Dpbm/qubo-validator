@@ -1,0 +1,8 @@
+pytest
+z3-solver
+matplotlib
+pandas
+numpy
+scipy
+dwave-ocean-sdk
+pyside6
