@@ -15,5 +15,13 @@ add-dev:
 	echo $$DEPENDENCIES | tr " " "\n" >> dev-requirements.txt
 	uv add --dev $$DEPENDENCIES
 
+test:
+	@echo "Running tests..."
+	uv run python -m pytest ./tests
+
+lint:
+	@echo "Linting..."
+	uv run ruff check --fix
+
 %:
 	@:
