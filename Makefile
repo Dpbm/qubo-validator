@@ -17,7 +17,7 @@ add-dev:
 
 test:
 	@echo "Running tests..."
-	QT_QPA_PLATFORM=offscreen uv run python -m pytest -s -o faulthandler_timeout=5 -vvv ./tests
+	uv run python -m pytest -s -vvv ./tests
 
 lint:
 	@echo "Linting..."
