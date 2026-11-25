@@ -10,22 +10,24 @@ requires-python = ">=3.14"
 dependencies = [
     "dwave-ocean-sdk>=9.5.0",
     "matplotlib>=3.11.2",
+    "networkx>=3.7",
     "numpy>=2.5.5",
     "pandas>=3.1.1",
     "pyside6>=6.12.0",
-    "pytest>=9.2.0",
+    "rustworkx>=0.18.1",
     "scipy>=1.18.1",
     "z3-solver>=5.4.1.0",
 ]
 
 [project.scripts]
-qubo-validator = "qubo_validator:main"
+qubo-validator = "qubo_validator.qubo_validator:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
-
-[dependency-groups]
-dev = [
-    "ruff>=0.17.5",
-]

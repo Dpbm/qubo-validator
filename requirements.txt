@@ -6,3 +6,5 @@ numpy
 scipy
 dwave-ocean-sdk
 pyside6
+rustworkx
+networkx

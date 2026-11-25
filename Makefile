@@ -1,4 +1,4 @@
-.PHONY: add
+.PHONY: add add-dev test lint run
 .SILENT:
 .ONESHELL:
 SHELL = /usr/bin/bash
@@ -22,6 +22,9 @@ test:
 lint:
 	@echo "Linting..."
 	uv run ruff check --fix
+
+run:
+	uv run qubo-validator
 
 %:
 	@:
