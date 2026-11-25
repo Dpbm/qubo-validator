@@ -1,4 +1,3 @@
-pytest
 z3-solver
 matplotlib
 pandas

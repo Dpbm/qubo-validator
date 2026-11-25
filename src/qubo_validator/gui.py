@@ -440,8 +440,10 @@ class GUI(QMainWindow):
         worker.failed.connect(self._on_analysis_failed)
         worker.finished.connect(thread.quit)
         worker.failed.connect(thread.quit)
-        thread.finished.connect(worker.deleteLater)
-        thread.finished.connect(thread.deleteLater)
+        # Do NOT call deleteLater on worker or thread: Python owns them via
+        # self._worker / self._worker_thread.  Letting Qt destroy the C++
+        # side while Shiboken wrappers are still alive causes a segfault.
+        # _clear_thread_refs drops the Python references, allowing normal GC.
         thread.finished.connect(self._clear_thread_refs)
 
         self._worker_thread = thread

@@ -122,7 +122,7 @@ def test_invalid_submission_shows_error_without_download(qapp: QApplication) -> 
         gui.close()
 
 
-def test_ising_simulated_annealing_flow(qapp: QApplication) -> None:
+def test_ising_simulated_annealing_flow(qapp:QApplication) -> None:
     """Ising selection and SimulatedAnnealingSampler parameters execute end-to-end."""
     gui = GUI()
     gui.show()
