@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from qubo-validator!")
+from qubo_validator.gui import GUI
+
+__all__ = ["GUI", "main"]
